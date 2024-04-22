@@ -2,10 +2,12 @@ public class MorseDecoder {
     BinaryTree <String> morseTree;
     BinaryTree <String> currentTree;
     String morseCode;
+    String c;
     public MorseDecoder() {
         morseTree = new BinaryTree<>("/", createLeftMorseTree(), createRightMorseTree());
         currentTree = morseTree;
         morseCode = "";
+        c = "";
     }
     private BinaryTree<String> createLeftMorseTree(){
         BinaryTree <String> bS = new BinaryTree<>("S", new BinaryTree<String>("H"), new BinaryTree<String>("V"));
@@ -55,6 +57,42 @@ public class MorseDecoder {
         }
         return '#';
     }
+
+    public void prae_traverse(BinaryTree<String> morseTree){
+        if(morseTree!=null){
+            System.out.println(morseTree.getContent());
+            prae_traverse(morseTree.getLeftTree());
+            prae_traverse(morseTree.getRightTree());
+        }
+    }
+    public void in_traverse(BinaryTree<String> morseTree){
+        if(morseTree!=null){
+            in_traverse(morseTree.getLeftTree());
+            System.out.println(morseTree.getContent());
+            in_traverse(morseTree.getRightTree());
+        }
+    }
+    public void post_traverse(BinaryTree<String> morseTree){
+        if(morseTree!=null){
+            post_traverse(morseTree.getLeftTree());
+            post_traverse(morseTree.getRightTree());
+            System.out.println(morseTree.getContent());
+        }
+    }
+
+    public String searchContent(BinaryTree<String> morseTree){
+        if(!morseTree.isEmpty()){
+            if(c == morseTree.getContent()){
+                return c;
+            } else{
+                searchContent(morseTree.getLeftTree());
+                searchContent(morseTree.getRightTree());
+                return "";
+            }
+        }
+        return "";
+    }
+
     public static void main(String[] args) {
         MorseDecoder morseDecoder = new MorseDecoder();
         String morseCode = "...././.-../.-../---//.--/---/.-./.-../-../";

@@ -28,8 +28,21 @@ public class MorseEncoder {
         return new BinaryTree<>("-", b3P, b3L);
     }
 
+    //weg = w
+    //c = content
+    //Hinterperson*innen = links/rechts baum*innen
     public String encode(String finishedSentence){
+        if(letterTree.isEmpty()){
+           return "";
+        } else{
+            if(){
 
+            } else{
+                if(){
+
+                }
+            }
+        }
 
         return this.encode(this.finishedSentence);
     }
