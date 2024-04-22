@@ -7,7 +7,6 @@ public class MorseDecoder {
         morseTree = new BinaryTree<>("/", createLeftMorseTree(), createRightMorseTree());
         currentTree = morseTree;
         morseCode = "";
-        c = "";
     }
     private BinaryTree<String> createLeftMorseTree(){
         BinaryTree <String> bS = new BinaryTree<>("S", new BinaryTree<String>("H"), new BinaryTree<String>("V"));
@@ -80,13 +79,13 @@ public class MorseDecoder {
         }
     }
 
-    public String searchContent(BinaryTree<String> morseTree){
+    public String searchContent(BinaryTree<String> morseTree, String C){
         if(!morseTree.isEmpty()){
-            if(c == morseTree.getContent()){
-                return c;
+            if(C == morseTree.getContent()){
+                return C;
             } else{
-                searchContent(morseTree.getLeftTree());
-                searchContent(morseTree.getRightTree());
+                searchContent(morseTree.getLeftTree(), C);
+                searchContent(morseTree.getRightTree(), C);
                 return "";
             }
         }
