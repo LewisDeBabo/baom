@@ -1,5 +1,5 @@
 import java.beans.Encoder;
-
+/*
 public class MorseEncoder {
     BinaryTree <String> letterTree;
     BinaryTree <String> currentTree;
@@ -54,3 +54,4 @@ public class MorseEncoder {
         System.out.println(finishedSentence + " = " + encodedMsg);
     }
 }
+*/
