@@ -1,5 +1,5 @@
 public class MorseDecoder {
-    BinaryTree <String> morseTree;
+    static BinaryTree <String> morseTree;
     BinaryTree <String> currentTree;
     String morseCode;
     String c;
@@ -7,6 +7,8 @@ public class MorseDecoder {
         morseTree = new BinaryTree<>("/", createLeftMorseTree(), createRightMorseTree());
         currentTree = morseTree;
         morseCode = "";
+        //c = "@";
+        //c = "C";
     }
     private BinaryTree<String> createLeftMorseTree(){
         BinaryTree <String> bS = new BinaryTree<>("S", new BinaryTree<String>("H"), new BinaryTree<String>("V"));
@@ -79,23 +81,25 @@ public class MorseDecoder {
         }
     }
 
-    public String searchContent(BinaryTree<String> morseTree, String C){
+    public String searchContent(BinaryTree<String> morseTree, String c){
         if(!morseTree.isEmpty()){
-            if(C == morseTree.getContent()){
-                return C;
+            if(c == morseTree.getContent()){
+                System.out.println(c);
+                return c;
             } else{
-                searchContent(morseTree.getLeftTree(), C);
-                searchContent(morseTree.getRightTree(), C);
-                return "";
+                searchContent(morseTree.getLeftTree(), c);
+                searchContent(morseTree.getRightTree(), c);
+                return c;
             }
         }
-        return "";
+        return c;
     }
 
     public static void main(String[] args) {
         MorseDecoder morseDecoder = new MorseDecoder();
         String morseCode = "...././.-../.-../---//.--/---/.-./.-../-../";
         String decodedMsg = morseDecoder.decode(morseCode);
+        morseDecoder.searchContent(morseTree, "C");
         System.out.println(morseCode + " = " + decodedMsg);
     }
 }
