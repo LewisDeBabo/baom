@@ -1,9 +1,10 @@
-public class Fragen extends Bauminhalt{
+public class Frage extends Bauminhalt{
 
     String frage;
 
-    public Fragen(String frage){
+    public Frage(String frage){
         this.frage = frage;
+        istFrage = true;
     }
 
     public String getFrage(){

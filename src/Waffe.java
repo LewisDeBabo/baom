@@ -1,8 +1,8 @@
-public class Waffen extends Bauminhalt{
+public class Waffe extends Bauminhalt{
 
     String waffe;
 
-    public Waffen(String waffe){
+    public Waffe(String waffe){
         this.waffe = waffe;
     }
 
