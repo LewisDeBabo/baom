@@ -4,30 +4,32 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class SpielGUI {
+public class SpielGUI extends JFrame{
     public Waffenbaum waffenbaum;
-    private JButton jaButton;
-    private JButton neinButton;
-    private JTextArea Frage;
+    private JButton jaButton = new JButton();
+    private JButton neinButton = new JButton();
+    private JTextArea Frage = new JTextArea();
 
 
     public SpielGUI() {
-        jaButton.addMouseListener(new MouseAdapter() {
+
+        jaButton.addActionListener(new ActionListener() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
-                waffenbaum.ja();
+            public void actionPerformed(ActionEvent e) {
+
             }
         });
-        neinButton.addMouseListener(new MouseAdapter() {
+        neinButton.addActionListener(new ActionListener() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
-                waffenbaum.nein();
+            public void actionPerformed(ActionEvent e) {
+
             }
         });
     }
 
+    public void (){
+
+    }
     private void createUIComponents() {
 
     }

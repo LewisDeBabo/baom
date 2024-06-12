@@ -15,24 +15,13 @@
       </hspacer>
       <component id="3471a" class="javax.swing.JButton" binding="jaButton" custom-create="true" default-binding="true">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="78" height="236"/>
             <maximum-size width="78" height="236"/>
           </grid>
         </constraints>
         <properties>
           <text value="Ja"/>
-        </properties>
-      </component>
-      <component id="7d36b" class="javax.swing.JButton" binding="neinButton" custom-create="true" default-binding="true">
-        <constraints>
-          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="78" height="236"/>
-            <maximum-size width="78" height="236"/>
-          </grid>
-        </constraints>
-        <properties>
-          <text value="Nein"/>
         </properties>
       </component>
       <component id="5b5ec" class="javax.swing.JTextArea" binding="Frage">
@@ -42,6 +31,17 @@
           </grid>
         </constraints>
         <properties/>
+      </component>
+      <component id="7d36b" class="javax.swing.JButton" binding="neinButton" custom-create="true" default-binding="true">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="7" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="78" height="236"/>
+            <maximum-size width="78" height="236"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Nein"/>
+        </properties>
       </component>
     </children>
   </grid>
