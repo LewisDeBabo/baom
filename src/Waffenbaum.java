@@ -35,11 +35,21 @@ public class Waffenbaum {
 
     //fehlt?
     public boolean istEsEmpirischNichtexistentFragezeichen(){
-        return true;
+        if(zeiger == null){
+            return true;
+        }
+        return false;
     }
 
     public void newQuestionmacherUndNewWaffenhinzufueger(){
 
+    }
+
+    private String preorder(BinaryTree<Bauminhalt> pBaum) {
+        if(pBaum.isEmpty()){
+            return "";
+        }
+        return pBaum.getContent().toString()+preorder(pBaum.getLeftTree())+preorder(pBaum.getRightTree());
     }
 
 }
