@@ -1,29 +1,49 @@
 import javax.swing.*;
-import javax.swing.JFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.text.Normalizer;
 
 public class SpielGUI extends JFrame{
 
     Waffenbaum waffenbaum;
     private JButton jaButton;
     private JButton neinButton;
-    private JTextArea frage;
+    private JEditorPane frage;
     private JPanel panel1;
 
 
     public SpielGUI() {
-        JFrame frame = new JFrame("RanzGUI");
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setSize(700,500);
-        frame.setVisible(true);
 
-        frame.add(jaButton);
-        frame.add(neinButton);
-        frame.add(frage);
+        jaButton = new JButton("Ja");
+        neinButton = new JButton("Nein");
+        frage = new JEditorPane();
+        panel1 = new JPanel();
+
+        setTitle("RanzGUI");
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setSize(700,500);
+        setLocationRelativeTo(null);
+        setVisible(true);
+
+        panel1.setLayout(null);
+
+        panel1.add(jaButton);
+        panel1.add(neinButton);
+        panel1.add(frage);
+
+
+        int frameWidth = 300;
+        int frameHeight = 300;
+        setSize(frameWidth, frameHeight);
+        setTitle("GUI");
+        setResizable(false);
+
+
+        frage.setBounds(80, 64, 120, 32);
+        jaButton.setBounds(16, 192, 80, 24);
+        neinButton.setBounds(184, 192, 80, 24);
+
+
+        add(panel1);
 
         jaButton.addActionListener(new ActionListener() {
             @Override
@@ -45,6 +65,6 @@ public class SpielGUI extends JFrame{
     }
 
     public static void main(String[] args) {
-        SpielGUI gui = new SpielGUI();
+        new SpielGUI();
     }
 }
